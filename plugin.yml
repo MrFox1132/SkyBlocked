@@ -1,0 +1,36 @@
+name: SkyBlocked
+version: 1.0.0
+api: [1.13.0]
+main: SkyBlocked\Main
+commands:
+  is:
+    usage: /is <help> <page>
+    description: Tells the sender a list of SkyBlocked commands
+    permission: is.command.help
+permissions:
+  is:
+    default: false
+    description: Allows player to use all SkyBlocked features
+    children:
+      is.command:
+        default: op
+        description: Allows player to use all SkyBlocked commands
+        children:
+          is.command.help:
+            default: true
+            description: Allows the player to use the help command
+          is.command.create:
+            default: true
+            description: Creates a new island/SkyHome for the sender
+          is.command.find:
+            default: true
+            description: Allows the player to use the home command
+          is.command.delete:
+            default: true
+            description: Allows the player to delete their island
+          is.command.sethome:
+            default: true
+            description: Allows player to set their island home
+          is.command.home:
+            default: true
+            description: Allows player to teleport to their island
